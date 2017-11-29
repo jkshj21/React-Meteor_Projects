@@ -2,7 +2,6 @@ import {Mongo} from 'meteor/mongo';
 import Numeral from 'numeral';
 export const Players = new Mongo.Collection('players');
 
-
 export const calculatePlayerPositions = (players) => {
   let rank = 1;
 
