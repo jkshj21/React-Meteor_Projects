@@ -1,9 +1,17 @@
 import React, {Component} from 'react';
+import {Accounts} from 'meteor/accounts-base';
 
 export default class Link extends Component {
   logoutUser(){
-    this.props.history.push('/');
+    Accounts.logout();
   }
+
+  componentWillMount(){
+    if (!Meteor.userId()){
+      this.props.history.replace('/');
+    }
+  }
+
   render(){
     return(
       <div>
