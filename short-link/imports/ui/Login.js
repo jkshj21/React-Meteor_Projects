@@ -16,20 +16,18 @@ export default class NotFound extends Component {
     }
   }
 
-
-
   onSubmit(event) {
     event.preventDefault();
     let email = this.refs.email.value.trim();
     let password = this.refs.password.value.trim();
 
     Meteor.loginWithPassword({email}, password, (error) => {
-      let err = error? error.reason : "";
+      let err = error ? error.reason : "";
       this.setState({error:err})
     });
 
     event.target.email.value="";
-    event.target.password.valye="";
+    event.target.password.value="";
   }
 
   render(){
